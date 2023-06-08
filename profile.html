@@ -36,6 +36,7 @@
 
       body {
         font-family: "Noto Sans KR";
+        display: flex;
       }
 
       .profile-container {
@@ -84,7 +85,9 @@
         height: 110px;
         border: 1px solid #dbdbdb;
         border-radius: 50%;
-        background: url("./src/assets/basic-profile-img-.png") no-repeat;
+        background: url("./src/assets/logo.png");
+        background-repeat: no-repeat;
+        background-size: cover;
         margin: 30px auto 0;
       }
 
@@ -178,8 +181,8 @@
         gap: 12px;
 
         /* 이렇게 경계를 만드는게 나을까?? */
-        border-bottom: 1px solid #dbdbdb;
-        padding-bottom: 16px;
+        /* border-bottom: 1px solid #dbdbdb; */
+        /* padding-bottom: 16px; */
       }
       .post-container .post:not(:nth-child(1)) {
         margin-top: 16px;
@@ -190,7 +193,7 @@
         width: 42px;
         height: 42px;
         border-radius: 50%;
-        background-image: url("./src/assets/basic-profile-img-.png");
+        background-image: url("./src/assets/logo.png");
         background-repeat: no-repeat;
         background-size: cover;
         flex-basis: 42px;
@@ -368,7 +371,218 @@
           </div>
         </div>
       </div>
+      <nav style="text-align: center">NAV</nav>
     </div>
-    <nav style="text-align: center">NAV</nav>
+
+    <!-- 2 -->
+
+    <div class="profile-container">
+      <header class="profile-header">
+        <a href="#" class="back-btn"></a>
+        <button class="setting-btn"></button>
+      </header>
+      <main class="profile-main">
+        <button type="file" class="profile-main-img"></button>
+        <h1>애월읍 위니브 감귤농장</h1>
+        <p>@ weniv_Mandarin</p>
+        <ul class="profile-main-interest">
+          <li>연극</li>
+          <li>뮤지컬</li>
+          <li>피아노 연주회</li>
+        </ul>
+        <!-- <h2>애월읍 감귤 전국 배송, 귤따기 체험, 감귤 농장</h2> -->
+        <button class="profile-setting-btn">프로필 수정</button>
+      </main>
+      <div class="profile-border"></div>
+      <div class="profile-post-header">
+        <button class="post-list-btn"></button>
+        <button class="post-album-btn"></button>
+      </div>
+      <div class="post-container">
+        <div
+          class="post"
+          style="border-bottom: 1px solid #dbdbdb; padding-bottom: 16px"
+        >
+          <div class="post-user-img"></div>
+          <div class="post-content">
+            <p>
+              애월읍 위니브 감귤농장<button
+                class="content-setting-btn"
+                onclick="alert('게시물 수정/삭제 버튼')"
+              ></button>
+            </p>
+            <p>@ weniv_Mandarin</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex
+              commodi repellendus ratione optio nostrum maiores, eaque officiis
+              quibusdam, fuga qui illo architecto adipisci, ducimus dicta
+              reprehenderit quasi voluptatem amet dignissimos.
+            </p>
+            <ul>
+              <li class="post-content-img"></li>
+            </ul>
+            <div class="post-content-buttons">
+              <button class="heart-btn"></button>
+              <button class="comment-btn"></button>
+            </div>
+            <p class="post-content-date">2020년 10월 21일</p>
+          </div>
+        </div>
+        <div
+          class="post"
+          style="border-bottom: 1px solid #dbdbdb; padding-bottom: 16px"
+        >
+          <div class="post-user-img"></div>
+          <div class="post-content">
+            <p>
+              애월읍 위니브 감귤농장<button
+                class="content-setting-btn"
+                onclick="alert('게시물 수정/삭제 버튼')"
+              ></button>
+            </p>
+            <p>@ weniv_Mandarin</p>
+            <p>Lorem</p>
+            <ul>
+              <!-- <li class="post-content-img"></li> -->
+            </ul>
+            <div class="post-content-buttons">
+              <button class="heart-btn"></button>
+              <button class="comment-btn"></button>
+            </div>
+            <p class="post-content-date">2020년 10월 21일</p>
+          </div>
+        </div>
+        <div
+          class="post"
+          style="border-bottom: 1px solid #dbdbdb; padding-bottom: 16px"
+        >
+          <div class="post-user-img"></div>
+          <div class="post-content">
+            <p>
+              애월읍 위니브 감귤농장<button
+                class="content-setting-btn"
+                onclick="alert('게시물 수정/삭제 버튼')"
+              ></button>
+            </p>
+            <p>@ weniv_Mandarin</p>
+            <p>Lorem</p>
+            <ul>
+              <li class="post-content-img"></li>
+            </ul>
+            <div class="post-content-buttons">
+              <button class="heart-btn"></button>
+              <button class="comment-btn"></button>
+            </div>
+            <p class="post-content-date">2020년 10월 21일</p>
+          </div>
+        </div>
+      </div>
+      <nav style="text-align: center">NAV</nav>
+    </div>
+
+    <!-- 3 -->
+
+    <div class="profile-container">
+      <header class="profile-header">
+        <a href="#" class="back-btn"></a>
+        <button class="setting-btn"></button>
+      </header>
+      <main class="profile-main">
+        <button type="file" class="profile-main-img"></button>
+        <h1>애월읍 위니브 감귤농장</h1>
+        <p>@ weniv_Mandarin</p>
+        <ul
+          class="profile-main-interest"
+          style="padding: 0 50px; flex-wrap: wrap"
+        >
+          <li style="display: inline-block">연극</li>
+          <li style="display: inline-block">뮤지컬</li>
+          <li style="display: inline-block">피아노 연주회</li>
+          <li style="display: inline-block">콘서트</li>
+          <li style="display: inline-block">영화</li>
+          <li style="display: inline-block">오페라</li>
+          <li style="display: inline-block">오페라</li>
+          <li style="display: inline-block">오페라</li>
+        </ul>
+        <!-- <h2>애월읍 감귤 전국 배송, 귤따기 체험, 감귤 농장</h2> -->
+        <button class="profile-setting-btn">프로필 수정</button>
+      </main>
+      <div class="profile-border"></div>
+      <div class="profile-post-header">
+        <button class="post-list-btn"></button>
+        <button class="post-album-btn"></button>
+      </div>
+      <div class="post-container">
+        <div class="post">
+          <div class="post-user-img"></div>
+          <div class="post-content">
+            <p>
+              애월읍 위니브 감귤농장<button
+                class="content-setting-btn"
+                onclick="alert('게시물 수정/삭제 버튼')"
+              ></button>
+            </p>
+            <p>@ weniv_Mandarin</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex
+              commodi repellendus ratione optio nostrum maiores, eaque officiis
+              quibusdam, fuga qui illo architecto adipisci, ducimus dicta
+              reprehenderit quasi voluptatem amet dignissimos.
+            </p>
+            <ul>
+              <li class="post-content-img"></li>
+            </ul>
+            <div class="post-content-buttons">
+              <button class="heart-btn"></button>
+              <button class="comment-btn"></button>
+            </div>
+            <p class="post-content-date">2020년 10월 21일</p>
+          </div>
+        </div>
+        <div class="post">
+          <div class="post-user-img"></div>
+          <div class="post-content">
+            <p>
+              애월읍 위니브 감귤농장<button
+                class="content-setting-btn"
+                onclick="alert('게시물 수정/삭제 버튼')"
+              ></button>
+            </p>
+            <p>@ weniv_Mandarin</p>
+            <p>Lorem</p>
+            <ul>
+              <!-- <li class="post-content-img"></li> -->
+            </ul>
+            <div class="post-content-buttons">
+              <button class="heart-btn"></button>
+              <button class="comment-btn"></button>
+            </div>
+            <p class="post-content-date">2020년 10월 21일</p>
+          </div>
+        </div>
+        <div class="post">
+          <div class="post-user-img"></div>
+          <div class="post-content">
+            <p>
+              애월읍 위니브 감귤농장<button
+                class="content-setting-btn"
+                onclick="alert('게시물 수정/삭제 버튼')"
+              ></button>
+            </p>
+            <p>@ weniv_Mandarin</p>
+            <p>Lorem</p>
+            <ul>
+              <li class="post-content-img"></li>
+            </ul>
+            <div class="post-content-buttons">
+              <button class="heart-btn"></button>
+              <button class="comment-btn"></button>
+            </div>
+            <p class="post-content-date">2020년 10월 21일</p>
+          </div>
+        </div>
+      </div>
+      <nav style="text-align: center">NAV</nav>
+    </div>
   </body>
 </html>
