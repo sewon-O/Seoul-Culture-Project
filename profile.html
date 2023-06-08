@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body,
+      div,
+      header,
+      h1,
+      h2,
+      p,
+      a,
+      button,
+      input,
+      ul,
+      li {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      button {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background-color: #ffffff;
+      }
+
+      body {
+        /* background: #f2f2f2; */
+      }
+      .profile-container {
+        width: 390px;
+        /* box-shadow: inset 0 0 10px lime; */
+        border: 1px solid #dbdbdb;
+        box-sizing: border-box;
+      }
+
+      .profile-header {
+        height: 48px;
+        /* box-shadow: inset 0 0 10px red; */
+        border-bottom: 1px solid #dbdbdb;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .profile-header .back-btn {
+        /* box-shadow: inset 0 0 3px blue; */
+        width: 16px;
+        height: 16px;
+        text-decoration: none;
+        margin-left: 20px;
+        background: url("./src/assets/icon-arrow-left.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .profile-header .setting-btn {
+        /* box-shadow: inset 0 0 3px blue; */
+        width: 16px;
+        height: 16px;
+        background: url("/src/assets/icon-\ more-vertical.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-right: 23px;
+      }
+
+      .profile-main {
+        text-align: center;
+      }
+
+      .profile-main-img {
+        width: 110px;
+        height: 110px;
+        border: 1px solid #dbdbdb;
+        border-radius: 50%;
+        background: url("./src/assets/basic-profile-img-.png") no-repeat;
+        margin: 30px auto 0;
+      }
+
+      .profile-main h1 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 16px;
+      }
+
+      .profile-main p {
+        font-size: 12px;
+        font-weight: 400;
+        color: rgba(118, 118, 118, 1);
+        margin-top: 6px;
+      }
+
+      .profile-main h2 {
+        font-size: 14px;
+        font-weight: 400;
+        color: rgba(118, 118, 118, 1);
+        display: inline-block;
+        margin-top: 16px;
+        margin-bottom: 32px;
+      }
+      .profile-main ul {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+      }
+      .profile-main li {
+        font-size: 12px;
+        border-radius: 20px;
+        background-color: #92c176;
+        color: #ffffff;
+        padding: 4px 10px;
+        margin-top: 10px;
+      }
+      .profile-main .profile-setting-btn {
+        color: #767676;
+        border: 1px solid #dbdbdb;
+        border-radius: 20px;
+        padding: 6px 26px;
+        margin: 16px 0;
+      }
+
+      .profile-border {
+        height: 6px;
+        border-top: 1px solid #dbdbdb;
+        border-bottom: 1px solid #dbdbdb;
+        background-color: #f2f2f2;
+      }
+
+      .profile-post-header {
+        height: 43px;
+        border-bottom: 1px solid #dbdbdb;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 22.5px;
+      }
+
+      .profile-post-header .post-list-btn {
+        width: 20px;
+        height: 32px;
+        background: url("./src/assets/icon-post-list-off.png") no-repeat center;
+      }
+      .profile-post-header .post-list-btn:hover {
+        background: url("./src/assets/icon-post-list-on.png") no-repeat center;
+      }
+
+      .profile-post-header .post-album-btn {
+        width: 20px;
+        height: 32px;
+        background: url("./src/assets/icon-post-album-off.png") no-repeat center;
+        margin-right: 19.25px;
+      }
+      .profile-post-header .post-album-btn:hover {
+        background: url("./src/assets/icon-post-album-on.png") no-repeat center;
+      }
+
+      .post-container {
+        padding: 16px 16px 30px;
+        max-height: 455.5px;
+        overflow: auto;
+        /* box-shadow: inset 0 0 10px blue; */
+      }
+      .post-container .post {
+        /* box-shadow: inset 0 0 10px lime; */
+        display: flex;
+        gap: 12px;
+
+        /* 이렇게 경계를 만드는게 나을까?? */
+        /* border-bottom: 1px solid #dbdbdb;
+        padding-bottom: 16px; */
+      }
+      .post-container .post:not(:nth-child(1)) {
+        margin-top: 16px;
+      }
+
+      .post .post-user-img {
+        /* box-shadow: inset 0 0 5px red; */
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background-image: url("./src/assets/basic-profile-img-.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        flex-basis: 42px;
+      }
+
+      .post .post-content {
+        flex-basis: 300px;
+      }
+      .post .post-content .content-setting-btn {
+        width: 18px;
+        height: 18px;
+        background-image: url("./src/assets/s-icon-more-vertical.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-left: 140px;
+
+        /* display: inline-block; */
+      }
+      .post .post-content p:nth-child(1) {
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .post .post-content p:nth-child(2) {
+        font-size: 12px;
+        font-weight: 400;
+        color: rgba(118, 118, 118, 1);
+        margin-top: 2px;
+      }
+      .post .post-content p:nth-child(3) {
+        font-size: 14px;
+        font-weight: 400;
+        margin-top: 16px;
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* min-height: 51px; */
+      }
+      .post .post-content-date {
+        font-size: 10px;
+        font-weight: 400;
+        color: #767676;
+        margin-top: 18.5px;
+      }
+
+      .post .post-content ul {
+        margin-top: 16px;
+      }
+      .post-content .post-content-img {
+        height: 228px;
+        background-image: url("/src/assets/EZbXJTJU0AI0MoB.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .post-content .post-content-buttons {
+        margin-top: 14px;
+      }
+      .post-content .post-content-buttons .heart-btn {
+        width: 16px;
+        height: 15px;
+        background-image: url("./src/assets/heart.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .post-content .post-content-buttons .comment-btn {
+        width: 15px;
+        height: 15px;
+        background-image: url("./src//assets/Vector.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-left: 20px;
+      }
+
+      nav {
+        width: 390px;
+        height: 60px;
+        box-shadow: inset 0 0 10px lime;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="profile-container">
+      <header class="profile-header">
+        <a href="#" class="back-btn"></a>
+        <button class="setting-btn"></button>
+      </header>
+      <main class="profile-main">
+        <button type="file" class="profile-main-img"></button>
+        <h1>애월읍 위니브 감귤농장</h1>
+        <p>@ weniv_Mandarin</p>
+        <ul class="profile-main-interest">
+          <li>연극</li>
+          <li>뮤지컬</li>
+          <li>피아노 연주회</li>
+        </ul>
+        <!-- <h2>애월읍 감귤 전국 배송, 귤따기 체험, 감귤 농장</h2> -->
+        <button class="profile-setting-btn">프로필 수정</button>
+      </main>
+      <div class="profile-border"></div>
+      <div class="profile-post-header">
+        <button class="post-list-btn"></button>
+        <button class="post-album-btn"></button>
+      </div>
+      <div class="post-container">
+        <div class="post">
+          <div class="post-user-img"></div>
+          <div class="post-content">
+            <p>
+              애월읍 위니브 감귤농장<button
+                class="content-setting-btn"
+                onclick="alert('게시물 수정/삭제 버튼')"
+              ></button>
+            </p>
+            <p>@ weniv_Mandarin</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex
+              commodi repellendus ratione optio nostrum maiores, eaque officiis
+              quibusdam, fuga qui illo architecto adipisci, ducimus dicta
+              reprehenderit quasi voluptatem amet dignissimos.
+            </p>
+            <ul>
+              <li class="post-content-img"></li>
+            </ul>
+            <div class="post-content-buttons">
+              <button class="heart-btn"></button>
+              <button class="comment-btn"></button>
+            </div>
+            <p class="post-content-date">2020년 10월 21일</p>
+          </div>
+        </div>
+        <div class="post">
+          <div class="post-user-img"></div>
+          <div class="post-content">
+            <p>
+              애월읍 위니브 감귤농장<button
+                class="content-setting-btn"
+                onclick="alert('게시물 수정/삭제 버튼')"
+              ></button>
+            </p>
+            <p>@ weniv_Mandarin</p>
+            <p>Lorem</p>
+            <ul>
+              <!-- <li class="post-content-img"></li> -->
+            </ul>
+            <div class="post-content-buttons">
+              <button class="heart-btn"></button>
+              <button class="comment-btn"></button>
+            </div>
+            <p class="post-content-date">2020년 10월 21일</p>
+          </div>
+        </div>
+        <div class="post">
+          <div class="post-user-img"></div>
+          <div class="post-content">
+            <p>
+              애월읍 위니브 감귤농장<button
+                class="content-setting-btn"
+                onclick="alert('게시물 수정/삭제 버튼')"
+              ></button>
+            </p>
+            <p>@ weniv_Mandarin</p>
+            <p>Lorem</p>
+            <ul>
+              <li class="post-content-img"></li>
+            </ul>
+            <div class="post-content-buttons">
+              <button class="heart-btn"></button>
+              <button class="comment-btn"></button>
+            </div>
+            <p class="post-content-date">2020년 10월 21일</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav></nav>
+  </body>
+</html>
